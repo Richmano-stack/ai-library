@@ -1,0 +1,26 @@
+{
+  "name": "create-ai-workspace",
+  "version": "0.1.0",
+  "description": "Install AI Dev OS workspace templates into your project",
+  "type": "module",
+  "bin": {
+    "create-ai-workspace": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "degit": "^2.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}

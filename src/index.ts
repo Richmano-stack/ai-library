@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+import { runInstaller } from './installer.js';
+
+runInstaller().catch((error: unknown) => {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error(message);
+  process.exit(1);
+});
