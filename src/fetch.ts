@@ -1,4 +1,4 @@
-import degit from 'degit';
+import degit from 'tiged';
 import { TEMPLATE_REPO } from './constants.js';
 
 export async function fetchTemplate(destPath: string): Promise<void> {
