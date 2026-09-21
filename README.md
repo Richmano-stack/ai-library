@@ -14,10 +14,11 @@ Run this from your project root (e.g. a fresh Next.js app). The tool will fetch 
 
 ### What it does
 
-1. Downloads the latest template from the [`ai-dev-os`](https://github.com/Richmano-stack/ai-dev-os) repository using [`degit`](https://github.com/Richmano-stack/degit)
-2. Recursively copies all template files into the current working directory
-3. Skips `node_modules` and `.git` directories
-4. Cleans up temporary files
+1. Downloads the latest template tarball from the [`ai-dev-os`](https://github.com/Richmano-stack/ai-dev-os) repository using Node's built-in `fetch`
+2. Extracts it using the system `tar` command (no npm dependencies required)
+3. Recursively copies all template files into the current working directory
+4. Skips `node_modules` and `.git` directories
+5. Cleans up temporary files
 
 > **Note:** Existing files with the same name will be overwritten.
 
@@ -44,10 +45,9 @@ npx /path/to/ai-library
 src/
 ├── index.ts        # Entry point — calls the installer
 ├── installer.ts    # Orchestrates fetch → copy → cleanup
-├── fetch.ts        # Downloads the template via degit
+├── fetch.ts        # Downloads the template tarball via fetch and extracts with tar
 ├── copy.ts         # Recursively copies files (skips node_modules/.git)
-├── constants.ts    # Template repo + temp dir config
-└── degit.d.ts      # Type declarations for degit
+├── constants.ts    # Template repo, branch, and temp dir config
 ```
 
 ## License
